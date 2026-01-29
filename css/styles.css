@@ -1,6 +1,14 @@
+:root {
+    --light: #e3e3e3;
+    --accent: #f95959;
+    --darkest: #233142;
+    --dark: #455d7a;
+}
+
 body 
 {
-    background-color: #707070;
+    background-color: var(--darkest);
+    font-family: 'Nunito', 'sans-serif';
 }
 
 #title 
@@ -9,8 +17,7 @@ body
     width: 100%;
     margin: 2% 5%;
     text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FFFFFF;
+    color: var(--light);
 }
 
 #loginDiv
@@ -19,7 +26,7 @@ body
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #b2b2b2;
+    background-color: var(--dark);
 }
 
 #loggedInDiv
@@ -28,7 +35,7 @@ body
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #b2b2b2;
+    background-color: var(--dark);
 }
 
 #accessUIDiv
@@ -37,7 +44,7 @@ body
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: #b2b2b2;
+    background-color: var(--dark);
 }
 
 .buttons
@@ -46,12 +53,11 @@ body
     border-radius: 25px;
     width: 50%;
     margin-left: 25%;
-    font-family: 'Ubuntu', sans-serif;
 }
 
 .buttons:hover{
-    background-color: #00d5124f;
-    color: #FFFFFF;
+    background-color: var(--accent);
+    color: var(--light);
     opacity: 50%;
 }
 
@@ -78,7 +84,7 @@ input[type="text"],input[type="password"]{
     width: 80%;
     margin-left: 10%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 #inner-title{
@@ -88,8 +94,7 @@ input[type="text"],input[type="password"]{
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
+    color: var(--accent);
 }
 
 #loginResult{
@@ -99,8 +104,7 @@ input[type="text"],input[type="password"]{
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
+    color: var(--accent);
 }
 
 #userName{
@@ -120,7 +124,6 @@ select{
     margin-left: 35%;
     margin-top: 2%;
     font-size: 0.75em;
-    font-family: 'Ubuntu', sans-serif;
 }
 
 #colorSearchResult{
@@ -135,6 +138,5 @@ select{
     margin-left: 5%;
     margin-top: 2%;
     margin-bottom: 1%;
-    font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
+    color: var(--accent);
 }
