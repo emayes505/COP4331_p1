@@ -11,11 +11,11 @@ Erik: PM
 Echojo: Backend/ API stuff
 @Benjamin are you ok with being the second guy on the front end or API?
 
-* Erik Mayes: **Project Manager:**  
-* **Frontend:** HTML5, CSS3, JavaScript       ---Erik Mayes & Chase Freckmann---
-* **Backend:** PHP (API endpoints)            ---Benjamin Prins & William Douglass---
-* **Database:** MySQL (Relational DB)         ---Lincoln Huber---
-* **Server:** Apache (running on Ubuntu/DigitalOcean)    ---Emmanuel Michel---
+* **Project Manager:**                                    ---Erik Mayes---
+* **Frontend:** HTML5, CSS3, JavaScript                   ---Erik Mayes & Chase Freckmann---
+* **Backend:** PHP (API endpoints)                        ---Benjamin Prins & William Douglass---
+* **Database:** MySQL (Relational DB)                     ---Lincoln Huber---
+* **Server:** Apache (running on Ubuntu/DigitalOcean)     ---Emmanuel Michel---
 
 ## Features
 * **User Authentication:** Secure login system.
