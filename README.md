@@ -7,10 +7,9 @@ This is a web-based contact management application (or "Contacts Manager" for th
 
 
 * **Project Manager:**                                    ---Erik Mayes---
-* **Frontend:** HTML5, CSS3, JavaScript                   ---Erik Mayes & Chase Freckmann---
-* **Backend:** PHP (API endpoints)                        ---Benjamin Prins & William Douglass---
+* **Frontend:** HTML5, CSS3, JavaScript                   ---Erik Mayes & Chase Freckmann & Benjamin Prins---
+* **Backend:** PHP (API endpoints)                        ---Emmanuel Michel & William Douglass---
 * **Database:** MySQL (Relational DB)                     ---Lincoln Huber---
-* **Server:** Apache (running on Ubuntu/DigitalOcean)     ---Emmanuel Michel---
 
 ## Features
 * **User Authentication:** Secure login system.
