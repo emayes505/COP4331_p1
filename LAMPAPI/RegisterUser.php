@@ -34,16 +34,11 @@
         $stmt = $conn->prepare("SELECT Login FROM Users WHERE Login=?");
         $stmt->bind_param("s", $login);
         $stmt->execute();
-        $result = $stmt->get_result();
 
-        $stmt->close();
-
-        if ($result->num_rows > 0) {
-            return true; 
-        } else {
-            return false; 
-        }
-
+		$stmt->store_result();
+		$exists = $stmt->num_rows > 0;
+		$stmt->close();
+    	return $exists;
     }
 
 	function getRequestInfo()
