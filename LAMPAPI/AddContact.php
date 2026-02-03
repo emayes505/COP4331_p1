@@ -1,25 +1,47 @@
 <?php
 	$inData = getRequestInfo();
-	
-    $userId = $inData["userId"];
-	$firstName = $inData["firstName"];
-    $lastName = $inData["lastName"];
-    $phone = $inData["phone"];
-    $email = $inData["email"];
+
+	$userId = isset($inData["userId"]) ? $inData["userId"] : "";
+	$firstName = isset($inData["firstName"]) ? $inData["firstName"] : "";
+	$lastName = isset($inData["lastName"]) ? $inData["lastName"] : "";
+	$phone = isset($inData["phone"]) ? $inData["phone"] : "";
+	$email = isset($inData["email"]) ? $inData["email"] : "";
+
+	// Validate required fields
+	if ($userId == "" || $firstName == "" || $lastName == "" || $phone == "" || $email == "")
+	{
+		returnWithError("Required field was missing");
+		exit();
+	}
 
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
-	if ($conn->connect_error) 
+	if ($conn->connect_error)
 	{
-		returnWithError( $conn->connect_error );
-	} 
+		returnWithError("Database connection failed");
+	}
 	else
 	{
 		$stmt = $conn->prepare("INSERT into Contacts (UserId,FirstName,LastName,Phone,Email) VALUES(?,?,?,?,?)");
+		if (!$stmt)
+		{
+			returnWithError("Failed to prepare statement");
+			$conn->close();
+			exit();
+		}
+
 		$stmt->bind_param("issss", $userId, $firstName, $lastName, $phone, $email);
-		$stmt->execute();
+
+		if ($stmt->execute())
+		{
+			returnWithSuccess();
+		}
+		else
+		{
+			returnWithError("Failed to add contact: " . $stmt->error);
+		}
+
 		$stmt->close();
 		$conn->close();
-		returnWithError("");
 	}
 
 	function getRequestInfo()
@@ -32,12 +54,17 @@
 		header('Content-type: application/json');
 		echo $obj;
 	}
-	
+
 	function returnWithError( $err )
 	{
-		$retValue = '{"error":"' . $err . '"}';
+		$retValue = '{"success":false,"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
-    
-	
+
+	function returnWithSuccess()
+	{
+		$retValue = '{"success":true,"error":""}';
+		sendResultInfoAsJson( $retValue );
+	}
+
 ?>
