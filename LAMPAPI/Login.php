@@ -1,7 +1,6 @@
 
 <?php
 
-
 	$inData = getRequestInfo();
 	
 	$id = 0;
@@ -46,8 +45,10 @@
 	
 	function returnWithError( $err )
 	{
-		$retValue = '{"success":false,"error":"' . $err . '"}';
+		$retValue = '{"id":0,"firstName":"","lastName":"","error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
+	//	$retValue = '{"success":false,"error":"' . $err . '"}';
+	//	sendResultInfoAsJson( $retValue );
 	}
 
 	function returnWithInfo( $firstName, $lastName, $id )

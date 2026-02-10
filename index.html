@@ -1,23 +1,33 @@
 <html>
 <head>
-	<title>COP 4331 LAMP Stack Demo</title>
+	<title>Login Page</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">	
 	<script type="text/javascript" src="js/md5.js"></script>
 	<script type="text/javascript" src="js/code.js"></script>
     <link href="css/styles.css" rel="stylesheet">	
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="top-bar">
+	<span class="app-icon" aria-hidden="true">☎</span>
+	<span class="app-title">Contact Manager</span>
+</div>
 
-<h1 id="title">COP 4331 LAMP Stack Demo</h1>
 
 <div id="loginDiv">
-	<span id="inner-title">PLEASE LOG IN</span>
-	<input type="text" id="loginName" placeholder="Username" /><br />
-	<input type="password" id="loginPassword" placeholder="Password"/><br />
-	<button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Do It </button>
+	<span id="inner-title">Login</span>
+	<h2>Username</h2>
+	<input type="text" id="loginName" ><br />
+	<h2>Password</h2>
+	<input type="password" id="loginPassword"><br />
+	<button type="button" id="loginButton" class="buttons" onclick="doLogin();">Log In </button>
 	<span id="loginResult"></span>
+</div>
+
+<div class="signup-link">
+	<a href="##">New to Contact Manager? Sign up.</a>
 </div>
 
 </body>

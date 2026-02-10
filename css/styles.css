@@ -1,14 +1,36 @@
-:root {
-    --light: #e3e3e3;
-    --accent: #f95959;
-    --darkest: #233142;
-    --dark: #455d7a;
-}
-
 body 
 {
-    background-color: var(--darkest);
-    font-family: 'Nunito', 'sans-serif';
+    background-color: #f2f2f2;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+}
+
+.top-bar
+{
+    height: 48px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.app-icon
+{
+    font-size: 1.2rem;
+    color: #2e9b4f;
+    line-height: 1;
+}
+
+.app-title
+{
+    font-family: 'Bebas Neue', 'Ubuntu', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.04em;
+    color: #000000;
 }
 
 #title 
@@ -17,16 +39,20 @@ body
     width: 100%;
     margin: 2% 5%;
     text-align: center;
-    color: var(--light);
+    font-family: 'Ubuntu', sans-serif;
+    color: #FFFFFF;
 }
 
 #loginDiv
 {
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: var(--dark);
+    font-size: 22px;
+    width: 90%;
+    max-width: 420px;
+    margin: 10vh auto 0;
+    padding: 28px 25px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
 #loggedInDiv
@@ -35,7 +61,7 @@ body
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: var(--dark);
+    background-color: #b2b2b2;
 }
 
 #accessUIDiv
@@ -44,21 +70,26 @@ body
     width: 70%;
     margin-left: 15%;
     padding: 25px;
-    background-color: var(--dark);
+    background-color: #b2b2b2;
 }
 
 .buttons
 {
-    font-size: 30px;
-    border-radius: 25px;
-    width: 50%;
-    margin-left: 25%;
+    font-size: 22px;
+    border-radius: 6px;
+    width: 80%;
+    margin-left: 10%;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: rgb(54, 135, 39);
+    color: #ffffff;
+    border: 2px solid #2e9b4f;
 }
 
 .buttons:hover{
-    background-color: var(--accent);
-    color: var(--light);
-    opacity: 50%;
+    background-color: #247f3f;
+    border-color: #247f3f;
+    color: #FFFFFF;
+    opacity: 100%;
 }
 
 #loginName
@@ -79,22 +110,40 @@ body
 }
 
 input[type="text"],input[type="password"]{
-    border-radius: 25px;
+    border-radius: 6px;
     text-align: center;
     width: 80%;
     margin-left: 10%;
     margin-bottom: 2%;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #e7f0f6;
+    border: 2px solid #c7d6e2;
+    color: #1f2d3d;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+input[type="text"]:hover,input[type="password"]:hover{
+    border-color: #7fb2e3;
+    box-shadow: 0 0 0 3px rgba(127, 178, 227, 0.2);
+}
+
+input[type="text"]:focus,input[type="password"]:focus{
+    background-color: #f2f7fb;
+    border-color: #6fa8dc;
+    box-shadow: 0 0 0 4px rgba(111, 168, 220, 0.25);
+    outline: none;
 }
 
 #inner-title{
     display: inline-block;
-    font-size: 0.8em;
+    font-size: 1.5em;
     width: 90%;
-    text-align: center;
-    margin-left: 5%;
+    text-align: left;
+    margin-left: 10%;
     margin-bottom: 2%;
-    color: var(--accent);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    color: #000000;
 }
 
 #loginResult{
@@ -104,7 +153,8 @@ input[type="text"],input[type="password"]{
     text-align: center;
     margin-left: 5%;
     margin-bottom: 2%;
-    color: var(--accent);
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
 }
 
 #userName{
@@ -124,6 +174,7 @@ select{
     margin-left: 35%;
     margin-top: 2%;
     font-size: 0.75em;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 #colorSearchResult{
@@ -138,5 +189,55 @@ select{
     margin-left: 5%;
     margin-top: 2%;
     margin-bottom: 1%;
-    color: var(--accent);
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    color: #000000; 
+}
+h2 {
+    font-size: 1.25rem;
+    text-align: left;
+    margin-left: 10%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #000000; 
+}
+
+.signup-link
+{
+    margin: 12px auto 0;
+    margin-top: 55px;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.95rem;
+}
+
+.signup-link a
+{
+    color: #000000;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.signup-link a:hover
+{
+    color: #2e9b4f;
+    text-decoration: underline;
+}
+
+
+#loginResult {
+    display: inline-block;
+    font-size: 0.9rem;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10px;
+    text-align: center;
+    color: #d93025; /* A more modern 'error' red */
+    font-family: 'Ubuntu', sans-serif;
 }
