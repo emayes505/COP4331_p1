@@ -1,6 +1,6 @@
 body 
 {
-    background-color: #f2f2f2;
+    background-color: #FAFAFA;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -15,7 +15,15 @@ body
     align-items: center;
     padding: 0 16px;
     gap: 10px;
+    justify-content: space-between;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.top-bar-left
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .app-icon
@@ -67,10 +75,341 @@ body
 #accessUIDiv
 {
     font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #b2b2b2;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 24px;
+    background-color: #f2f2f2;
+    min-height: calc(100vh - 48px);
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-header
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 0;
+    align-items: stretch;
+    flex: 1;
+    background-color: #FAFAFA;
+}
+
+.contacts-title-wrap,
+.contacts-actions-wrap,
+.contacts-search-wrap
+{
+    width: 100%;
+    padding: 16px 24px;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    box-shadow: inset 0 0 0 1px #d2dde6;
+}
+
+.contacts-title-wrap,
+.contacts-actions-wrap
+{
+    border-bottom: none;
+}
+
+.contacts-actions-wrap
+{
+    background-color: #f2f2f2;
+}
+
+.contacts-search-wrap
+{
+    background-color: #FAFAFA;
+    flex: 1;
+}
+
+.search-controls
+{
+    width: 100%;
+    max-width: 900px;
+    background-color: #f3f0e6;
+    padding: 16px 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 1px #c8d8e4;
+    display: flex;
+    justify-content: center;
+}
+
+.search-results
+{
+    width: 100%;
+    max-width: 900px; 
+    background-color: #f3f0e6;
+    padding: 16px 20px 20px;
+    box-shadow: inset 0 0 0 1px #c8d8e4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+ 
+.contacts-title-wrap
+{
+    background-color:#f2f2f2; 
+    margin-bottom: 12px;
+}
+
+.contacts-title
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #151A22;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 900px;
+}
+
+.contacts-actions
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+#contactSearch
+{
+    font-size: 18px;
+    width: 250%;
+    height: 40px;
+    max-width: 520px;
+    margin: 0;
+    text-align: left;
+    padding-left: 6px;
+}
+
+#searchContactButton
+{
+    width: 250%;
+    margin: 0;
+    background-color: #47c827;
+    color: #151A22;
+    border: 2px solid #2b6777;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#searchContactButton:hover
+{
+    background-color: #3fb321;
+    border-color: #245461;
+}
+
+.contacts-actions-bar
+{
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-button
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 12px 22px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.action-add
+{
+    background-color: #62b36f;
+    border-color: #4a9a58;
+    color: #000000;
+}
+
+.action-edit
+{
+    background-color: #e3c66a;
+    border-color: #caa84f;
+    color: #000000;
+}
+
+.action-delete
+{
+    background-color: #d86b6b;
+    border-color: #bf5656;
+    color: #000000;
+}
+
+.action-button:hover
+{
+    filter: brightness(0.92);
+}
+
+#contactsResult
+{
+    display: block;
+    font-size: 0.9rem;
+    margin: 10px 0 12px;
+    color: #95060a;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    width: 100%;
+    max-width: 860px;
+}
+
+#contactsContainer
+{
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 8px;
+    max-height: 320px;
+    overflow-y: auto;
+    box-shadow: inset 0 0 0 1px #d9d9d9;
+    width: 100%;
+    max-width: 860px;
+}
+
+.modal-overlay
+{
+    position: fixed;
+    inset: 0;
+    background: rgba(21, 26, 34, 0.45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 999;
+}
+
+.modal-overlay.is-open
+{
+    display: flex;
+}
+
+.modal
+{
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+}
+
+.modal-header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.modal-header h3
+{
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.2rem;
+    color: #151A22;
+}
+
+.modal-close
+{
+    border: none;
+    background: transparent;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #151A22;
+}
+
+.modal-body
+{
+    display: grid;
+    gap: 10px;
+}
+
+.modal-field
+{
+    display: grid;
+    gap: 6px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9rem;
+    color: #151A22;
+}
+
+.modal-field input
+{
+    height: 38px;
+    border-radius: 8px;
+    border: 1px solid #c8d8e4;
+    padding: 0 10px;
+    font-size: 0.95rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.modal-error
+{
+    min-height: 18px;
+    color: #b00020;
+    font-size: 0.85rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.modal-actions
+{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+#contactsList
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-item
+{
+    padding: 10px 12px;
+    border-bottom: 1px solid #ececec;
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.contact-item:last-child
+{
+    border-bottom: none;
+}
+
+.contact-item:hover
+{
+    background-color: #f3f5f7;
+}
+
+.contact-item.selected
+{
+    background-color: #e1e6eb;
+}
+
+.contact-name
+{
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+.contact-meta
+{
+    font-size: 0.85rem;
+    color: #555555;
 }
 
 .buttons
@@ -94,19 +433,19 @@ body
 
 #loginName
 {
-	font-size: 30px;
+    font-size: 30px;
 }
 #loginPassword
 {
-	font-size: 30px;
+    font-size: 30px;
 }
 #searchText
 {
-	font-size: 30px;
+    font-size: 30px;
 }
 #colorText
 {
-	font-size: 30px;
+    font-size: 30px;
 }
 
 input[type="text"],input[type="password"]{
@@ -169,6 +508,21 @@ input[type="text"]:focus,input[type="password"]:focus{
     margin-left: 40%;
 }
 
+.logout-link
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #000000;
+    text-decoration: none;
+}
+
+.logout-link:hover
+{
+    color: #2e9b4f;
+    text-decoration: underline;
+}
+
 select{
     width: 30%;
     margin-left: 35%;
@@ -206,6 +560,13 @@ h2 {
     color: #000000; 
 }
 
+h3 {
+    font-size: 3 rem;
+    text-align: left;
+    margin-left: 10%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #C0B283; 
+}
 .signup-link
 {
     margin: 12px auto 0;
@@ -230,6 +591,7 @@ h2 {
     text-decoration: underline;
 }
 
+/* Add these to maintain the new aesthetic for JS-driven elements */
 
 #loginResult {
     display: inline-block;
@@ -240,4 +602,9 @@ h2 {
     text-align: center;
     color: #d93025; /* A more modern 'error' red */
     font-family: 'Ubuntu', sans-serif;
+}
+h4 {
+    font-size: 1.2rem;
+    font-family: 'Ubuntu', sans-serif;
+    color: #000000; 
 }
