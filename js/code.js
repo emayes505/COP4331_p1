@@ -90,6 +90,7 @@ function doRegister()
 
 	try
 	{
+		document.getElementById("registerResult").innerHTML = "unset2";
 		xhr.onreadystatechange = function() 
 		{
 			if (this.readyState == 4 && this.status == 200) 
@@ -111,12 +112,15 @@ function doRegister()
 					document.getElementById("registerResult").innerHTML = "error";
 				}
 			}
+			else {
+				document.getElementById("registerResult").innerHTML = "uh oh";
+			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		//document.getElementById("registerResult").innerHTML = "error";
+		document.getElementById("loginResult").innerHTML = err.message;
 	}
 }
 
@@ -245,6 +249,7 @@ function searchColor()
 	}
 	
 }
+
 
 
 
