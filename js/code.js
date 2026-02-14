@@ -107,7 +107,8 @@ function doRegister()
 				}
 				else
 				{
-					document.getElementById("registerResult").innerHTML = jsonObject.error;
+					//document.getElementById("registerResult").innerHTML = jsonObject.error;
+					document.getElementById("registerResult").innerHTML = "error";
 				}
 			}
 		};
@@ -115,8 +116,7 @@ function doRegister()
 	}
 	catch(err)
 	{
-		//document.getElementById("registerResult").innerHTML = err.message;
-		document.getElementById("registerResult").innerHTML = "error";
+		//document.getElementById("registerResult").innerHTML = "error";
 	}
 }
 
@@ -245,6 +245,7 @@ function searchColor()
 	}
 	
 }
+
 
 
 
