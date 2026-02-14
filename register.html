@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>Sign Up</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">	
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/code.js"></script>
+ 	<link href="css/styles.css" rel="stylesheet">	
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="top-bar">
+	<span class="app-icon" aria-hidden="true">☎</span>
+	<span class="app-title">Contact Manager</span>
+</div>
+
+<div id="registerDiv">
+	<span id="inner-title">Sign Up</span>
+
+	<h2>First Name</h2>
+	<input type="text" id="registerFirstName"><br />
+
+	<h2>Last Name</h2>
+	<input type="text" id="registerLastName"><br />
+
+	<h2>Username</h2>
+	<input type="text" id="registerLogin"><br />
+
+	<h2>Password</h2>
+	<input type="password" id="registerPassword"><br />
+
+	<button type="button" class="buttons" onclick="doRegister();">Create Account</button>
+
+	<span id="registerResult"></span>
+</div>
+
+<div class="signup-link">
+	<a href="index.html">Already have an account? Log in.</a>
+</div>
+
+</body>
+</html>

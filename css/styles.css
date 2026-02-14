@@ -63,6 +63,18 @@ body
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
+#registerDiv
+{
+    font-size: 22px;
+    width: 90%;
+    max-width: 420px;
+    margin: 10vh auto 0;
+    padding: 28px 25px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
 #loggedInDiv
 {
     font-size: 30px;
@@ -439,6 +451,22 @@ body
 {
     font-size: 30px;
 }
+#registerFirstName
+{
+    font-size: 30px;
+}
+#registerLastName
+{
+    font-size: 30px;
+}
+#registerLogin
+{
+    font-size: 30px;
+}
+#registerPassword
+{
+    font-size: 30px;
+}
 #searchText
 {
     font-size: 30px;
@@ -486,6 +514,17 @@ input[type="text"]:focus,input[type="password"]:focus{
 }
 
 #loginResult{
+    display: inline-block;
+    font-size: 0.8em;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font-family: 'Ubuntu', sans-serif;
+    color: #95060a;
+}
+
+#registerResult{
     display: inline-block;
     font-size: 0.8em;
     width: 90%;
@@ -603,8 +642,21 @@ h3 {
     color: #d93025; /* A more modern 'error' red */
     font-family: 'Ubuntu', sans-serif;
 }
+#registerResult {
+    display: inline-block;
+    font-size: 0.9rem;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10px;
+    text-align: center;
+    color: #d93025; /* A more modern 'error' red */
+    font-family: 'Ubuntu', sans-serif;
+}
 h4 {
     font-size: 1.2rem;
     font-family: 'Ubuntu', sans-serif;
     color: #000000; 
+
 }
+
+
