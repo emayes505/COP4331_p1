@@ -71,8 +71,6 @@ function doRegister()
 	let login = document.getElementById("registerLogin").value;
 	let password = document.getElementById("registerPassword").value
 
-	document.getElementById("registerResult").innerHTML = "unset";
-
 	if (firstName == "" || lastName == "" || login == "" || password == "")
 	{
 		document.getElementById("registerResult").innerHTML = "All fields are required";
@@ -90,7 +88,6 @@ function doRegister()
 
 	try
 	{
-		document.getElementById("registerResult").innerHTML = "unset2";
 		xhr.onreadystatechange = function() 
 		{
 			if (this.readyState == 4 && this.status == 200) 
@@ -108,8 +105,7 @@ function doRegister()
 				}
 				else
 				{
-					//document.getElementById("registerResult").innerHTML = jsonObject.error;
-					document.getElementById("registerResult").innerHTML = "error";
+					document.getElementById("registerResult").innerHTML = jsonObject.error;
 				}
 			}
 			else {
@@ -249,6 +245,7 @@ function searchColor()
 	}
 	
 }
+
 
 
 
