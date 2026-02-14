@@ -64,6 +64,61 @@ function doLogin()
 
 }
 
+function doRegister()
+{
+	let firstName = document.getElementById("registerFirstName").value;
+	let lastName = document.getElementById("registerLastName").value;
+	let login = document.getElementById("registerLogin").value;
+	let password = document.getElementById("registerPassword").value
+
+	document.getElementById("loginResult").innerHTML = "";
+
+	if (firstName == "" || lastName == "" || login == "" || password == "")
+	{
+		document.getElementById("registerResult").innerHTML = "All fields are required";
+		return;
+	}
+
+	let tmp = {firstName:firstName,lastName:lastName,login:login,password:password};
+	let jsonPayload = JSON.stringify(tmp);
+
+	let url = urlBase + '/RegisterUser.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse(xhr.responseText);
+
+				if(jsonObject.success)
+				{
+					document.getElementById("registerResult").style.color = "green";
+					document.getElementById("registerResult").innerHTML = "Account created! Redirecting...";
+					
+					setTimeout(function(){
+						window.location.href = "index.html";
+					}, 1500);
+				}
+				else
+				{
+					document.getElementById("registerResult").innerHTML = jsonObject.error;
+				}
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("registerResult").innerHTML = err.message;
+	}
+}
+
 function saveCookie()
 {
 	let minutes = 20;
@@ -189,3 +244,4 @@ function searchColor()
 	}
 	
 }
+
