@@ -65,16 +65,13 @@ function doLogin()
 }
 
 function doRegister()
-{
-	document.getElementById("registerResult").innerHTML = "test";
-	return;
-	
+{	
 	let firstName = document.getElementById("registerFirstName").value;
 	let lastName = document.getElementById("registerLastName").value;
 	let login = document.getElementById("registerLogin").value;
 	let password = document.getElementById("registerPassword").value
 
-	document.getElementById("registerResult").innerHTML = "";
+	document.getElementById("registerResult").innerHTML = "unset";
 
 	if (firstName == "" || lastName == "" || login == "" || password == "")
 	{
@@ -118,7 +115,8 @@ function doRegister()
 	}
 	catch(err)
 	{
-		document.getElementById("registerResult").innerHTML = err.message;
+		//document.getElementById("registerResult").innerHTML = err.message;
+		document.getElementById("registerResult").innerHTML = "error";
 	}
 }
 
@@ -247,5 +245,6 @@ function searchColor()
 	}
 	
 }
+
 
 
