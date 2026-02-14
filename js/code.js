@@ -108,9 +108,6 @@ function doRegister()
 					document.getElementById("registerResult").innerHTML = jsonObject.error;
 				}
 			}
-			else {
-				document.getElementById("registerResult").innerHTML = "uh oh";
-			}
 		};
 		xhr.send(jsonPayload);
 	}
@@ -245,6 +242,7 @@ function searchColor()
 	}
 	
 }
+
 
 
 
