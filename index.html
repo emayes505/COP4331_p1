@@ -1,14 +1,26 @@
 <html>
 <head>
-	<title>Login Page</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">	
-	<script type="text/javascript" src="js/md5.js"></script>
-	<script type="text/javascript" src="js/code.js"></script>
-    <link href="css/styles.css" rel="stylesheet">	
-	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In Page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="css/styles.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/md5.js"></script>
+    <script type="text/javascript" src="js/code.js"></script>
+    
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            readCookie();
+            loadContacts();
+        }, false);
+    </script>
 </head>
+
 <body>
 <div class="top-bar">
 	<span class="app-icon" aria-hidden="true">☎</span>
@@ -27,7 +39,7 @@
 </div>
 
 <div class="signup-link">
-	<a href="##">New to Contact Manager? Sign up.</a>
+	<a href="signup.html">New to Contact Manager? Sign up.</a>
 </div>
 
 </body>

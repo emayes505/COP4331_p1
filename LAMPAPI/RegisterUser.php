@@ -23,7 +23,8 @@
         $stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
         $stmt->execute();
 
-        returnWithInfo( $firstName, $lastName, $login);
+        $newId = $conn->insert_id;
+        returnWithInfo( $firstName, $lastName, $login, $newId);
 
         $stmt->close();
         $conn->close();
@@ -63,9 +64,9 @@
 		sendResultInfoAsJson( $retValue );
 	}
     	
-    function returnWithInfo( $firstName, $lastName, $login )
+    function returnWithInfo( $firstName, $lastName, $login, $id )
 	{
-		$retValue = '{"success":true,"firstName":"' . $firstName . '","lastName":"' . $lastName . '","login":"' . $login . '","error":""}';
+        $retValue = '{"success":true,"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","login":"' . $login . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 	

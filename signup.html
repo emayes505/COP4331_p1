@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Sign Up</title>
+	<script type="text/javascript" src="js/code.js"></script>
+	<link href="css/styles.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="top-bar">
+		<span class="app-icon" aria-hidden="true">☎</span>
+		<span class="app-title">Contact Manager</span>
+	</div>
+
+	<div id="loginDiv">
+		<span id="inner-title">Sign Up</span>
+		<h2>First Name</h2>
+		<input type="text" id="signupFirstName" ><br />
+		<h2>Last Name</h2>
+		<input type="text" id="signupLastName" ><br />
+		<h2>Username</h2>
+		<input type="text" id="signupLogin" ><br />
+		<h2>Password</h2>
+		<input type="password" id="signupPassword"><br />
+		<button type="button" id="signupButton" class="buttons" onclick="if (typeof doRegister === 'function') { doRegister(); } else { document.getElementById('signupResult').innerHTML = 'Signup script not loaded.'; }">Create Account</button>
+		<span id="signupResult"></span>
+		<span id="signupResult"><i/span>
+	</div>
+
+	<div class="signup-link">
+		<a href="index.html">Back to login</a>
+	</div>
+
+</body>
+</html>
+
