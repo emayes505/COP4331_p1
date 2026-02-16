@@ -1,0 +1,479 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Contact Manager API",
+    "description": "API for registering users, logging in, and managing contacts.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/none-01d-cf6/ContactManagerAPI/1.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    },
+    {
+      "url": "https://lampproject-g5.xyz",
+      "description": "Project G5 server"
+    }
+  ],
+  "paths": {
+    "/LAMPAPI/RegisterUser.php": {
+      "post": {
+        "summary": "Register a new user",
+        "operationId": "registerUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterUserRequest"
+              },
+              "example": {
+                "firstName": "Tony",
+                "lastName": "Stark",
+                "login": "IAmIronMan",
+                "password": "IluvU3000"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Registration result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegisterUserResponse"
+                },
+                "example": {
+                  "success": true,
+                  "firstName": "Tony",
+                  "lastName": "Stark",
+                  "login": "IAmIronMan",
+                  "error": ""
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/LAMPAPI/Login.php": {
+      "post": {
+        "summary": "Log in an existing user",
+        "operationId": "loginUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              },
+              "example": {
+                "login": "IAmIronMan",
+                "password": "IluvU3000"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Login result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                },
+                "example": {
+                  "success": true,
+                  "id": 18,
+                  "firstName": "Tony",
+                  "lastName": "Stark",
+                  "error": ""
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/LAMPAPI/AddContact.php": {
+      "post": {
+        "summary": "Add a new contact",
+        "operationId": "addContact",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddContactRequest"
+              },
+              "example": {
+                "userId": 18,
+                "firstName": "Bruce",
+                "lastName": "Banner",
+                "phone": "5729321",
+                "email": "hulksmash@gmail.com"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Contact creation result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MutationResponse"
+                },
+                "example": {
+                  "success": true,
+                  "error": ""
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/LAMPAPI/SearchContact.php": {
+      "post": {
+        "summary": "Search for contacts",
+        "operationId": "searchContact",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchContactRequest"
+              },
+              "example": {
+                "userId": 18,
+                "firstName": "Bruce",
+                "lastName": "Banner",
+                "phone": "5729321",
+                "email": "hulksmash@gmail.com"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchContactResponse"
+                },
+                "example": {
+                  "results": [
+                    {
+                      "id": 8,
+                      "firstName": "Bruce",
+                      "lastName": "Banner",
+                      "phone": "5729321",
+                      "email": "hulksmash@gmail.com"
+                    }
+                  ],
+                  "error": ""
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/LAMPAPI/UpdateContact.php": {
+      "post": {
+        "summary": "Update an existing contact",
+        "operationId": "updateContact",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateContactRequest"
+              },
+              "example": {
+                "userId": 18,
+                "contactId": 8,
+                "firstName": "Bruce",
+                "lastName": "Banner",
+                "phone": "4566112",
+                "email": "nomoresmash@yahoo.com"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Contact update result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MutationResponse"
+                },
+                "example": {
+                  "success": true,
+                  "error": ""
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/LAMPAPI/DeleteContact.php": {
+      "post": {
+        "summary": "Delete a contact",
+        "operationId": "deleteContact",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteContactRequest"
+              },
+              "example": {
+                "userId": 18,
+                "contactId": 8
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Contact deletion result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MutationResponse"
+                },
+                "example": {
+                  "success": true,
+                  "error": ""
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "RegisterUserRequest": {
+        "required": [
+          "firstName",
+          "lastName",
+          "login",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "login": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "RegisterUserResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "login": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "LoginRequest": {
+        "required": [
+          "login",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "login": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "AddContactRequest": {
+        "required": [
+          "firstName",
+          "lastName",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "SearchContactRequest": {
+        "required": [
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "Contact": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "SearchContactResponse": {
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Contact"
+            }
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateContactRequest": {
+        "required": [
+          "contactId",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "contactId": {
+            "type": "integer"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "DeleteContactRequest": {
+        "required": [
+          "contactId",
+          "userId"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "contactId": {
+            "type": "integer"
+          }
+        }
+      },
+      "MutationResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
