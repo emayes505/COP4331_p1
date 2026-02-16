@@ -3,6 +3,8 @@ name: Validate
 on:
   pull_request:
     branches: [main]
+  push:
+    branches: [main]
 
 jobs:
   validate:
@@ -33,3 +35,4 @@ jobs:
 
       - name: Validate swagger.json
         run: python3 -c "import json; json.load(open('swagger.json'))"
+
