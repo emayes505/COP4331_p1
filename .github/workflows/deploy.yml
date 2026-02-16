@@ -1,0 +1,19 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy via SCP
+        with:
+          host: ${{ secrets.SERVERSCP }}
+          username: root
+          password: ${{ secrets.SERVERPASS }}
+          source: "*.html,css/,js/,images/,LAMPAPI/,swagger.json"
+          target: /var/www/html/
