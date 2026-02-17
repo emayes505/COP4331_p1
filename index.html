@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,21 +27,20 @@
 	<span class="app-icon" aria-hidden="true">☎</span>
 	<span class="app-title">Contact Manager</span>
 </div>
+    <main>
+        <div id="loginDiv">
+            <span id="inner-title">Login</span>
+            <h2>Username</h2>
+            <input type="text" id="loginName" ><br />
+            <h2>Password</h2>
+            <input type="password" id="loginPassword"><br />
+            <button type="button" id="loginButton" class="buttons" onclick="doLogin();">Log In </button>
+            <span id="loginResult"></span>
+        </div>
 
-
-<div id="loginDiv">
-	<span id="inner-title">Login</span>
-	<h2>Username</h2>
-	<input type="text" id="loginName" ><br />
-	<h2>Password</h2>
-	<input type="password" id="loginPassword"><br />
-	<button type="button" id="loginButton" class="buttons" onclick="doLogin();">Log In </button>
-	<span id="loginResult"></span>
-</div>
-
-<div class="signup-link">
-	<a href="signup.html">New to Contact Manager? Sign up.</a>
-</div>
-
+        <div class="signup-link">
+            <a href="signup.html">New to Contact Manager? Sign up.</a>
+        </div>
+    </main>
 </body>
 </html>
