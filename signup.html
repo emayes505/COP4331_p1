@@ -15,13 +15,13 @@
 	<main>
 	<div id="loginDiv">
 		<span id="inner-title">Sign Up</span>
-		<h2>First Name</h2>
+		<label for="signupFirstName"><h2>First Name</h2></label>
 		<input type="text" id="signupFirstName" ><br />
-		<h2>Last Name</h2>
+		<label for="signupLastName"><h2>Last Name</h2></label>
 		<input type="text" id="signupLastName" ><br />
-		<h2>Username</h2>
+		<label for="signupLogin"><h2>Username</h2></label>
 		<input type="text" id="signupLogin" ><br />
-		<h2>Password</h2>
+		<label for="signupPassword"><h2>Password</h2></label>
 		<input type="password" id="signupPassword"><br />
 		<button type="button" id="signupButton" class="buttons" onclick="if (typeof doRegister === 'function') { doRegister(); } else { document.getElementById('signupResult').innerHTML = 'Signup script not loaded.'; }">Create Account</button>
 		<span id="signupResult"></span>
